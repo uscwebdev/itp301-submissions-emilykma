@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Emily Ma | Student Page</title>
+        
+        <style>
+        
+        #container {
+            width: 950px;
+            margin: auto;
+            padding: 0px; 
+        }
+
+        .column1 {
+            float: left;
+            width: 400px;
+            padding: 15px;
+            margin-left: 55px;
+        }
+
+        .column2 {
+            float: right;
+            width: 400px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        .row1 {
+            text-align: center;
+            color: black;
+            padding: 5px;
+            height: 150px;
+            margin: auto;
+        }
+
+        .clearfloat {
+            clear: both;
+        }
+
+        </style>
+        
+    </head>
+    <body>
+
+        <div id = "container"> <!--start container-->
+            
+            <div class = "row1"> <!--start row 1-->
+                
+                <h1>Emily Ma</h1>
+
+                <p><a href="mailto:ekma@usc.edu">ekma@usc.edu</a></p>
+
+                <div class="button">
+                    
+                    <button id="btn-click" class="btn">Favorite Color</button>
+
+                </div>
+
+                <div class = "column1"> <!--start column 1-->
+
+                    <h2>Assignments</h2>
+                    <p><a href="assignment_01/a1.html" target="_blank">Assignment 1: JS Photo Gallery</a></p>
+        
+                </div> <!--end column 1-->
+        
+                <div class = "column2"> <!--start column 2-->
+        
+                    <h2>Labs</h2>
+                    <p><a href="index.html" target="_blank">Lab 1: Student Page</a></p>
+        
+                </div> <!--end column 2-->
+                <div class = "clearfloat"></div>
+                
+            </div> <!--end row 1-->
+        
+        </div> <!--end container-->
+
+        <script>
+
+            document.querySelector('#btn-click').onclick = function(){
+                document.querySelector('body').style.backgroundColor = 'cornflowerblue';
+            }
+
+        </script>
+
+
+
+    </body>

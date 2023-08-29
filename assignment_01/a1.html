@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Assignment 2: Gallery </title>
+
+        <style>
+
+        #main {     
+            width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px;
+            background-color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #gallery1 {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            margin: 10px;
+        }
+
+        #gallery2 {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            margin: 10px;
+        }
+
+        #gallery3 {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            margin: 10px;
+        }
+
+        #gallery4 {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            margin: 10px;
+        }
+
+        #gallery5 {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            margin: 10px;
+        }
+
+        #mainpic {
+            width: 1100px;
+            height: auto;
+            overflow: hidden;
+            margin: 10px;
+        }
+
+
+        .portrait {
+            width: 100%;
+            height: auto;
+            display: block;
+    
+        }
+
+        .height-100 {
+            height: 100%;
+            width: auto;
+        }
+
+        .thumbnails {
+            position: relative;
+            width: auto;
+        }
+
+        .OGsize {
+            height: 100%;
+            width: 100%;
+        }
+
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="header"> <!-- start header div -->
+            <h1>Portugal Image Gallery</h1>
+        </div> <!-- end header div -->
+
+        <div id="main">
+
+            <div id="container"> <!--start container div -->
+
+                <!-- Row 1 -->
+
+                <div class="thumbnails" id="gallery1">
+                    <img id="pic1" class="height-100" src="img/main.jpg" alt="Luis Bridge North View">
+                </div> <!--gallery1-->
+
+                <div class="thumbnails" id="gallery2">
+                    <img id="pic2" class="height-100" src="img/cascais.jpg" alt="Cascais Lighthouse">
+                </div> <!--gallery2-->
+
+                <div class="thumbnails" id="gallery3">
+                    <img id="pic3" class="height-100" src="img/lisbon.jpg" alt="Lisbon Highest Point">
+                </div> <!--gallery3-->
+
+                <div class="thumbnails" id="gallery4">
+                    <img id="pic4" class="height-100" src="img/douro.jpg" alt="Luis Bridge South View">
+                </div> <!--gallery4-->
+
+                <div class="thumbnails" id="gallery5">
+                    <img id="pic5" class="height-100" src="img/river.jpg" alt="Douro River">
+                </div> <!--gallery5-->
+
+                <!-- main picture -->
+
+                <div class="thumbnails" id="mainpic">
+                    <img id="pic-main" class="OGsize" src="img/main.jpg" alt="Luis Bridge North View">
+                </div> <!--gallery5-->
+        
+            <div style="clear:both;"></div>
+
+            </div> <!--end container div -->
+
+        </div>
+
+        <script>
+
+            document.querySelector('#pic1').onclick = function(){
+                document.querySelector('#pic-main').src = "img/main.jpg";
+                document.querySelector('#pic-main').alt = "Luis Bridge North View";
+            }
+
+            document.querySelector('#pic2').onclick = function(){
+                document.querySelector('#pic-main').src = "img/cascais.jpg";
+                document.querySelector('#pic-main').alt = "Cascais Lighthouse";
+            }
+
+            document.querySelector('#pic3').onclick = function(){
+                document.querySelector('#pic-main').src = "img/lisbon.jpg";
+                document.querySelector('#pic-main').alt = "Lisbon Highest Point";
+            }
+
+            document.querySelector('#pic4').onclick = function(){
+                document.querySelector('#pic-main').src = "img/douro.jpg";
+                document.querySelector('#pic-main').alt = "Luis Bridge South View";
+            }
+
+            document.querySelector('#pic5').onclick = function(){
+                document.querySelector('#pic-main').src = "img/river.jpg";
+                document.querySelector('#pic-main').alt = "Douro River";
+            }
+
+        </script>
+
+    </body>
+</html>
