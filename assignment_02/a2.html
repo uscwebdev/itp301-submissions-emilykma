@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Gallery Page </title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <style>
+
+    #header{
+        height: 150px;
+        background-color: rgb(149, 195, 146);
+        color: rgb(255, 255, 255);
+        font-size: 1.2em;
+        text-align: center;
+        line-height: 150px;
+        text-shadow: 0px 0px 20px #000;
+        margin: 0px;
+    }
+
+    h1 {
+        margin: 0px;
+    }
+
+    body {
+        background-color: rgb(255, 255, 255);
+        margin: 0px;
+        font-family: 'Lato', sans-serif;
+    }
+
+    #main {
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        background-color: white;
+    }
+
+    #container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #gallery1 {
+        width: 250px;
+        height: 250px;
+        overflow: hidden;
+        margin: 30px;
+        padding-bottom: 110px;
+        padding-left: 10px;
+    }
+
+    #gallery2 {
+        width: 250px;
+        height: 250px;
+        overflow: hidden;
+        margin: 30px;
+        padding-top: 30px;
+        padding-bottom: 80px;
+        padding-left: 20px;
+    }
+
+    #img2 {
+        padding-bottom: 40px;
+    }
+
+    #gallery3 {
+        width: 250px;
+        height: 250px;
+        overflow: hidden;
+        padding-top: 20px;
+        padding-left: 40px;
+        padding-bottom: 120px;
+        margin: 30px;
+    }
+
+    #img3 {
+        padding-bottom: 15px;
+    }
+
+    #footer {
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        background-color: beige;
+    }
+
+    #cart-sub {
+        padding-left: 790px;
+        height: 60px;
+        line-height: 60px;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .portrait {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .height-100 {
+        height: 100%;
+        width: auto;
+    }
+
+    .thumbnails {
+        position: relative;
+        width: auto;
+    }
+
+    .thumbnails p {
+        color: rgb(0, 0, 0);
+        text-align: center;
+        font-family: 'Lato', sans-serif;
+        font-size: 19px;
+    }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="header"> <!-- start header div -->
+        <h1>My Cart</h1>
+    </div> <!-- end header div -->
+
+    <div id="main">
+
+        <div id="container"> <!--start container div -->
+
+        <!--Row 1-->
+
+            <div class="thumbnails" id="gallery1">
+                <img id="img1" class="height-100" src="img/toral.png" alt="Toral Boots">
+                    <p>TORAL - Blue Leather Cowboy Boots</p>
+                    <p>$520</p>
+            </div> <!--gallery1-->
+
+            <div class="thumbnails" id="gallery2">
+                <img id="img2" class="portrait" src="img/onitsuka.png" alt="Onitsuka Sneakers">
+                    <p>ONITSUKA TIGER - Mexico 66 Unisex Shoes</p>
+                    <p>$120</p>
+            </div> <!--gallery2-->
+
+            <div class="thumbnails" id="gallery3">
+                <img id="img3" class="portrait" src="img/LV.png" alt="LV Heels">
+                    <p>LOUIS VUITTON - Vintage Monogram Bow Accents Slides</p>
+                    <p>$345</p>
+            </div> <!--gallery3-->
+
+            
+            <div id="cart-sub">Cart Subtotal: $<span>0</span></div>
+
+
+        <div style="clear:both;"></div>
+
+        </div> <!--end container div -->
+
+    </div>
+
+    <div id="footer">
+		Emily Ma &copy; 2023
+	</div> <!-- #footer -->
+
+    <script>
+
+    /*
+        Workflow:
+            1. User clicks on an item/picture (.onclick)
+            2. Save cart subtotal in a variable, 'cartTotal'
+            3. Convert 'cartTotal' to an integer using parseInt()
+            4. Update 'cartTotal' according to which items the user clicks on
+            5. Display the updated value to users.
+    */
+
+        // TORAL BOOTS
+        document.querySelector('#img1').onclick = function(){
+			
+			// 2. Save cart subtotal in a variable, 'cartTotal'
+			var cartTotal = document.querySelector("#cart-sub > span").innerHTML;
+
+			// 3. Convert 'cartTotal' to an integer using parseInt()
+			cartTotal = parseInt(cartTotal);
+
+			// 4. Update 'cartTotal'
+			cartTotal += 520;
+
+			// 5. Display the new value.
+			document.querySelector("#cart-sub > span").innerHTML = cartTotal;
+		};
+
+        // ONITSUKA SNEAKERS
+        document.querySelector('#img2').onclick = function(){
+			
+			// 2. Save cart subtotal in a variable, 'cartTotal'
+			var cartTotal = document.querySelector("#cart-sub > span").innerHTML;
+
+			// 3. Convert 'cartTotal' to an integer using parseInt()
+			cartTotal = parseInt(cartTotal);
+
+			// 4. Update 'cartTotal'
+			cartTotal += 120;
+
+			// 5. Display the new value.
+			document.querySelector("#cart-sub > span").innerHTML = cartTotal;
+		};
+
+        // LV HEELS
+        document.querySelector('#img3').onclick = function(){
+			
+			// 2. Save cart subtotal in a variable, 'cartTotal'
+			var cartTotal = document.querySelector("#cart-sub > span").innerHTML;
+
+			// 3. Convert 'cartTotal' to an integer using parseInt()
+			cartTotal = parseInt(cartTotal);
+
+			// 4. Update 'cartTotal'
+			cartTotal += 345;
+
+			// 5. Display the new value.
+			document.querySelector("#cart-sub > span").innerHTML = cartTotal;
+		};
+
+    </script>
+
+</body>
+</html>
