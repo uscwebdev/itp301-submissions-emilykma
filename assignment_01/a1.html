@@ -88,6 +88,12 @@
             width: 100%;
         }
 
+        #caption {
+            text-align: center; /* To center the caption */
+            margin-top: 10px; /* Adjust this margin as needed */
+            font-weight: bold; /* Optional: Make the caption bold */
+        }
+
 
         </style>
 
@@ -129,7 +135,8 @@
 
                 <div class="thumbnails" id="mainpic">
                     <img id="pic-main" class="OGsize" src="img/main.jpg" alt="Luis Bridge North View">
-                </div> <!--gallery5-->
+                    <div id="caption">Luis Bridge North View</div> <!-- Default caption for main image -->
+                </div>
         
             <div style="clear:both;"></div>
 
@@ -139,30 +146,54 @@
 
         <script>
 
-            document.querySelector('#pic1').onclick = function(){
-                document.querySelector('#pic-main').src = "img/main.jpg";
-                document.querySelector('#pic-main').alt = "Luis Bridge North View";
-            }
+            // document.querySelector('#pic1').onclick = function(){
+            //     document.querySelector('#pic-main').src = "img/main.jpg";
+            //     document.querySelector('#pic-main').alt = "Luis Bridge North View";
+            // }
 
-            document.querySelector('#pic2').onclick = function(){
-                document.querySelector('#pic-main').src = "img/cascais.jpg";
-                document.querySelector('#pic-main').alt = "Cascais Lighthouse";
-            }
+            // document.querySelector('#pic2').onclick = function(){
+            //     document.querySelector('#pic-main').src = "img/cascais.jpg";
+            //     document.querySelector('#pic-main').alt = "Cascais Lighthouse";
+            // }
 
-            document.querySelector('#pic3').onclick = function(){
-                document.querySelector('#pic-main').src = "img/lisbon.jpg";
-                document.querySelector('#pic-main').alt = "Lisbon Highest Point";
-            }
+            // document.querySelector('#pic3').onclick = function(){
+            //     document.querySelector('#pic-main').src = "img/lisbon.jpg";
+            //     document.querySelector('#pic-main').alt = "Lisbon Highest Point";
+            // }
 
-            document.querySelector('#pic4').onclick = function(){
-                document.querySelector('#pic-main').src = "img/douro.jpg";
-                document.querySelector('#pic-main').alt = "Luis Bridge South View";
-            }
+            // document.querySelector('#pic4').onclick = function(){
+            //     document.querySelector('#pic-main').src = "img/douro.jpg";
+            //     document.querySelector('#pic-main').alt = "Luis Bridge South View";
+            // }
 
-            document.querySelector('#pic5').onclick = function(){
-                document.querySelector('#pic-main').src = "img/river.jpg";
-                document.querySelector('#pic-main').alt = "Douro River";
-            }
+            // document.querySelector('#pic5').onclick = function(){
+            //     document.querySelector('#pic-main').src = "img/river.jpg";
+            //     document.querySelector('#pic-main').alt = "Douro River";
+            // }
+
+        // Get all thumbnail images
+        const thumbnailImages = document.querySelectorAll('.thumbnails img');
+
+        // Function to update the main image and caption
+        function updateMainImageAndCaption(imageSrc, altText) {
+            const mainImage = document.querySelector('#pic-main');
+            const caption = document.querySelector('#caption');
+
+            mainImage.src = imageSrc;
+            mainImage.alt = altText;
+            caption.textContent = altText; // Update caption text
+        }
+
+        // Loop through thumbnail images and add click event listeners
+        for (i = 0; i < thumbnailImages.length; i++) {
+            thumbnailImages[i].onclick = function () {
+                const imageSrc = this.src;
+                const altText = this.alt;
+
+                updateMainImageAndCaption(imageSrc, altText);
+            };
+        }
+
 
         </script>
 
