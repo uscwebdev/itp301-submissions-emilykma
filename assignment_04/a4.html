@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Liar's Dice Game</title>
+    <style>
+
+        .dice {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+        }
+        .message {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Liar's Dice Game</h1>
+    <p>Enter your guess (1-6):</p>
+    <input type="text" id="guessInput">
+    <button id="submit">Submit</button>
+    <div class="message"></div>
+    <div id="diceContainer">
+        <!-- Dice images will be displayed here -->
+        <img class="dice" src="dice_images/1.png" alt="Dice 1">
+        <img class="dice" src="dice_images/2.png" alt="Dice 2">
+        <img class="dice" src="dice_images/3.png" alt="Dice 3">
+        <img class="dice" src="dice_images/4.png" alt="Dice 4">
+        <img class="dice" src="dice_images/5.png" alt="Dice 5">
+    </div>
+
+    <script>
+        // Function to generate a random integer between 1 and 6 inclusive
+        function getRandomInt() {
+            return Math.floor(Math.random() * 6 + 1);
+        }
+
+        // Function to check if at least one value matches the user's guess
+        function checkGuess(numbers, guess) {
+            for (let i = 0; i < numbers.length; i++) {
+                if (numbers[i] == guess) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Function to display the dice images and check the guess
+        function rollDiceAndCheckGuess() {
+            var guessInput = document.querySelector("#guessInput");
+            var message = document.querySelector(".message");
+
+            // Generate random numbers for the dice
+            var images = [];
+            for (i = 0; i < 5; i++) {
+                var randomNum = getRandomInt();
+                images.push(randomNum);
+            }
+
+            // Display dice images using document.quertyselectorAll()
+            var img = document.querySelectorAll("#diceContainer img");
+            // Loop through array and set each src and alt to the corresponding value stored in images array
+            for (let i = 0; i < img.length; i++) {
+                img[i].src = 'dice_images/' + images[i] + '.png';
+                img[i].alt = "Dice " + images[i];
+            }
+
+            // Check if the guess is correct
+            var userGuess = parseInt(guessInput.value);
+            if (checkGuess(images, userGuess)) {
+                message.style.color = "green";
+                message.innerHTML = "Congratulations! You guessed at least one value correctly.";
+            } else {
+                message.style.color = "red";
+                message.innerHTML = "Sorry, your guess was incorrect.";
+            }
+        }
+
+        // Add a click event listener to the submit button
+        var submit = document.querySelector("#submit");
+        submit.onclick = rollDiceAndCheckGuess;
+
+    </script>
+</body>
+</html>
